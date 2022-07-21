@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { setSelectedCars } from "./actions";
+import { setSelectedCars } from "./action";
 
 export const initialState = {
   selectedCars: {},

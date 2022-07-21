@@ -4,7 +4,7 @@ import { carsApiReducer } from "./feature/carsDetails/service";
 
 /** you can initiate all reducer in here */
 const globalReducers = combineReducers({
-  ...carsApiReducer,
+  carsApiReducer : carsApiReducer,
   carsReducer,
 });
 
