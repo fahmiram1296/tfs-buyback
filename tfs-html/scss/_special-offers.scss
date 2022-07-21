@@ -1,0 +1,27 @@
+.special-offers {
+    background: #000;
+    margin-bottom: 40px;
+    .offersCont {
+        background: url(https://toyotafinancial-h.assetsadobe.com/is/image/content/dam/mazdafinancial/home/MY19_CX9_Brochure_Exterior_007_R3_5.jpg?wei=) no-repeat; 
+        background-size: cover; 
+        color: #fff; 
+        height: 315px;
+        text-align: center; 
+        @media screen and (min-width: 768px) {
+            height: 300px;
+        }
+        h2 {
+            padding-top: 40px;
+            text-transform: uppercase;
+        }
+        button {
+            background-color: #fff;
+            color: #101010;
+            border-color: #101010;
+            font-size: 1rem;
+            margin-top: 50px;
+            padding: 9px 20px;
+            text-transform: uppercase;
+        }
+    }
+}
