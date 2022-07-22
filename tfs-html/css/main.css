@@ -1,0 +1,165 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+header {
+  background: #2b2b2b;
+}
+header .navbar a {
+  color: #d5d5d5;
+}
+header .navbar .navbar-brand {
+  width: 155px;
+}
+@media screen and (min-width: 768px) {
+  header .navbar .navbar-brand {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    text-transform: uppercase;
+    width: 200px;
+  }
+}
+header .navbar-nav .nav-item {
+  padding: 0 10px;
+}
+@media screen and (min-width: 768px) {
+  header .navbar-nav .nav-item {
+    padding: 0 20px;
+  }
+}
+header .navbar-nav .nav-item .nav-link {
+  text-transform: uppercase;
+}
+header .navbar-collapse {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-ordinal-group: 14;
+      -ms-flex-order: 13;
+          order: 13;
+}
+@media screen and (min-width: 768px) {
+  header .navbar-collapse {
+    -webkit-box-ordinal-group: inherit;
+        -ms-flex-order: inherit;
+            order: inherit;
+  }
+}
+header .navbar-right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media screen and (min-width: 992px) {
+  header .navbar-expand-lg .navbar-toggler {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.carouselCont {
+  margin: 0 -15px;
+}
+
+.carousel-caption {
+  top: 50px;
+}
+.carousel-caption h5 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 40px;
+  }
+}
+
+.carousel-indicators li {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 10px;
+  margin: 0 10px;
+  opacity: inherit;
+  width: 10px;
+}
+.carousel-indicators li.active {
+  background: transparent;
+}
+
+.card-cont {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .card-cont {
+    border-right: 1px solid #9d9d9d;
+    margin: 50px 0;
+  }
+}
+.card-cont a {
+  color: #101010;
+  text-transform: uppercase;
+}
+.card-cont::after {
+  background-color: #101010;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 50px;
+}
+@media screen and (min-width: 768px) {
+  .card-cont::after {
+    background: transparent;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card-cont.last {
+    border-right: 0;
+  }
+}
+.card-cont.last::after {
+  background: transparent;
+}
+
+.special-offers {
+  background: #000;
+  margin-bottom: 40px;
+}
+.special-offers .offersCont {
+  background: url(https://toyotafinancial-h.assetsadobe.com/is/image/content/dam/mazdafinancial/home/MY19_CX9_Brochure_Exterior_007_R3_5.jpg?wei=) no-repeat;
+  background-size: cover;
+  color: #fff;
+  height: 315px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .special-offers .offersCont {
+    height: 300px;
+  }
+}
+.special-offers .offersCont h2 {
+  padding-top: 40px;
+  text-transform: uppercase;
+}
+.special-offers .offersCont button {
+  background-color: #fff;
+  color: #101010;
+  border-color: #101010;
+  font-size: 1rem;
+  margin-top: 50px;
+  padding: 9px 20px;
+  text-transform: uppercase;
+}
