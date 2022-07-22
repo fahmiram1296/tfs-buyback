@@ -1,4 +1,4 @@
-export type Pokemon = {
+export type Cars = {
     name: string;
     type: string;
-};
+}

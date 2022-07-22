@@ -1,15 +1,14 @@
 import { createReducer, PayloadAction } from "@reduxjs/toolkit";
-import { setSelectedCars } from "./action";
+import { setVinNumber } from "./action";
 
 export const initialState = {
-  setSelectedCars: {},
+  vinNumber: '',
 };
 
 const carsReducer = createReducer(initialState, (builder) => {
-  builder
-    .addCase(setSelectedCars, (state, action: PayloadAction<object>) => {
-        state.setSelectedCars = action.payload;
-    });
+  builder.addCase(setVinNumber, (state, action: PayloadAction<string>) => {
+    state.vinNumber = action.payload;
+  });
 });
 
 export default carsReducer;

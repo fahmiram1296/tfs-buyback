@@ -1,3 +1,11 @@
+import { createSelector } from "@reduxjs/toolkit";
 import { AppState } from "../../store";
+import { initialState } from "./reducer";
 
-export const selectedCars = (state: AppState) => state.carsReducer.setSelectedCars;
+const selectInitialState = (state: AppState) =>
+  state.carsReducer || initialState;
+
+export const selectedVinNumber = createSelector(
+  selectInitialState,
+  (state) => state.vinNumber
+);

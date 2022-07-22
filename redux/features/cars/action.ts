@@ -1,5 +1,3 @@
 import { createAction } from "@reduxjs/toolkit";
 
-export const setSelectedCars = createAction<object>("setSelectedCars");
-
-;
+export const setVinNumber = createAction<string>("setVinNumber");
