@@ -43,3 +43,32 @@ header {
         }
     }
 }
+
+/* Secondary Header */
+.secondary-header {
+    .navbar {
+        .navbar-brand {
+            width: 150px;
+        }
+    }
+    .navbar-expand-lg {
+        @media screen and (min-width: 992px) {
+            justify-content: space-between;
+        } 
+    }
+    .nav-item {
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            padding: 0;
+            .nav-link {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
