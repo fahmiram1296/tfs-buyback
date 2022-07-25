@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import { Header } from "../../components/organism/header";
+import { VehicleSearchSection } from "../../components/organism/vehicleSearchSection";
 import { selectedVinNumber } from "../../redux/features/cars/selector";
 import { carsApi, useQuery } from "../../redux/features/cars/service";
 import { Cars } from "../../redux/features/cars/types";
@@ -35,12 +37,14 @@ const CarsDetails: NextPage = () => {
   
   return (
     <div>
-      <button onClick={(e) => handleClickButton(e, "basic")}>basic</button>
+      <Header />
+      <VehicleSearchSection />
+      {/* <button onClick={(e) => handleClickButton(e, "basic")}>basic</button>
       <button onClick={(e) => handleClickButton(e, "condition")}>
         condition
       </button>
       <button onClick={(e) => handleClickButton(e, "photo")}>photo</button>
-      <div>{uiView[currentTab]}</div>
+      <div>{uiView[currentTab]}</div> */}
     </div>
   );
 };
