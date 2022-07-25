@@ -59,11 +59,27 @@
 
   /* Custom styles */
   .form-control {
-    border: 1px solid #9D9D9D;
+    border: 2px solid #9D9D9D;
     border-radius: 4px;
     color: #101010;
     font-weight: 500;
   }
+
+  .form-control.form-error {
+    border: 2px solid #910A2D;
+  }
+
+  .form-label-group .input-icon {
+    position: absolute;
+    top: 22%;
+    right: 2%;
+    color: #910A2D;
+  }
+
+  .form-label-group .form-error-text {
+    color: #910A2D;
+  }
+
   .form-link {
     display: flex;
     justify-content: flex-end;
@@ -84,5 +100,9 @@
         opacity: 0.2;
         height: 48px;
         width: 100%;
+        
+    }
+    .button-enable {
+      opacity: 1;
     }
   }

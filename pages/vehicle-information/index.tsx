@@ -38,8 +38,7 @@ const CarsDetails: NextPage = () => {
   return (
     <div>
       <Header />
-      <VehicleSearchSection />
-      TESS
+      {/* <VehicleSearchSection /> */}
       {/* <button onClick={(e) => handleClickButton(e, "basic")}>basic</button>
       <button onClick={(e) => handleClickButton(e, "condition")}>
         condition

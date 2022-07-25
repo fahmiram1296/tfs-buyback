@@ -12,26 +12,72 @@ import { FaqSection } from '../components/organism/faqSection';
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const [vin, setVin] = useState('0');
+  const [vin, setVin] = useState('');
   const [callback, results] = useQuery?.useLazyGetCarsQuery();
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const checkError = (results: any) => {
+    if (
+      results?.isError &&
+      "data" in results?.error
+    ) {
+      const errorData: any = results?.error?.data;
+      setIsError(true);
+      setErrorMessage(errorData?.message);
+    } else if (!results?.isError) {
+      dispatch(setVinNumber(vin));
+      router.push("/vehicle-information");
+    }
+
+  };
+
 
   useEffect(() => {
-    if (results?.data) {
-      dispatch(setVinNumber(vin))
-      router.push("/vehicle-information");
+    if (!results?.isUninitialized && !results?.isLoading) {
+      checkError(results);
     }
   }, [results])
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: any) => {    
     e.preventDefault();
     callback(vin);
   };
+
+  const handleInput = (e: any) => {
+    const { value } = e?.currentTarget;
+    setErrorMessage('');
+    setIsError(false);
+    setVin(value);
+  };
+  
+  const checkDisable = () => isError || vin === '';  
 
   return (
     <div>
       <Header />
       <div className="container">
-        <VehicleSearchSection />
+        <VehicleSearchSection
+          searchForm={{
+            buttonProps: {
+              handleClick: (e: any) => handleClick(e),
+              text: "GET  MY OFFER",
+              disabled: checkDisable(),
+            },
+            inputProps: {
+              handleInput: (e: any) => handleInput(e),
+              placeholder: "Enter VIN",
+              value: vin,
+              errorText: errorMessage,
+              isError: isError,
+            },
+            descProps: {
+              key: "desc",
+              handleDesc: (e: any) => handleClick(e),
+              text: "WHERE IS MY VIN",
+            },
+          }}
+        />
         <HowItWorkSection />
         <FaqSection />
       </div>

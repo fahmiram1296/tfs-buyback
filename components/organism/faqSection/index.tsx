@@ -41,7 +41,7 @@ export const FaqSection: FunctionComponent<Props> = ({}) => {
           <h2 className="text-uppercase">faqs</h2>
         </div>
       </div>
-      <div className="my-5">
+      <div className="my-2">
         <div className="accordion" id="accordionExample">
           {listFaq?.map((faq) => (
             <div className="card" key={faq?.key}>

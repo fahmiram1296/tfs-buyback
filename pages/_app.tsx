@@ -11,11 +11,13 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
-      useEffect(() => {
-        typeof document !== undefined
-          ? require("bootstrap/dist/js/bootstrap")
-          : null;
-      }, []);
+
+    useEffect(() => {
+      if (typeof document !== undefined) {
+        require("bootstrap/dist/js/bootstrap");
+      }
+    }, []);
+    
   return (
     <>
       <Head>
