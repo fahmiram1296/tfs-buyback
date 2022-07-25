@@ -56,7 +56,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = ({
           <a
             key={descProps?.key}
             href="#"
-            onClick={(e) => descProps?.handleDesc(e)}
+            onClick={() => descProps?.handleDesc('descriptionSearchForm')}
           >
             {descProps?.text}
           </a>

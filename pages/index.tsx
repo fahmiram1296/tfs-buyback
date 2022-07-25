@@ -8,6 +8,7 @@ import { Header } from '../components/organism/header';
 import { VehicleSearchSection } from '../components/organism/vehicleSearchSection';
 import { HowItWorkSection } from '../components/organism/howItWorksSection';
 import { FaqSection } from '../components/organism/faqSection';
+import { FindVinModal } from '../components/organism/findVinModal';
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
   const [callback, results] = useQuery?.useLazyGetCarsQuery();
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [modalShow, setModalShow] = useState(false);
 
   const checkError = (results: any) => {
     if (
@@ -39,9 +41,18 @@ const Home: NextPage = () => {
     }
   }, [results])
 
-  const handleClick = (e: any) => {    
-    e.preventDefault();
-    callback(vin);
+  const handleClick = (e: any) => { 
+    switch (e) {
+      case "descriptionSearchForm":
+        setModalShow(true);
+        break;
+      case "closeModal":
+        setModalShow(false)
+        break;
+      default:
+        callback(vin);
+        break;
+    }
   };
 
   const handleInput = (e: any) => {
@@ -55,6 +66,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <FindVinModal handleClose={(e: string) => handleClick(e)} show={modalShow} />
       <Header />
       <div className="container">
         <VehicleSearchSection
