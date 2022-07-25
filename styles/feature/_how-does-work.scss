@@ -1,0 +1,16 @@
+.how-does-work {
+    margin-top: 50px;
+    @media screen and (min-width: 992px) {
+        margin-top: 100px;
+    }
+    h2 {
+        &::after {
+            display: block;
+            content: "";
+            border-top: 0.2rem solid #101010;
+            width: 71px;
+            margin: 14px auto;
+            text-align: center;
+        }
+    }
+}

@@ -5,6 +5,10 @@ import styles from '../styles/Home.module.css'
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react'
 import { useQuery } from '../redux/features/cars/service'
+import { Header } from '../components/organism/header';
+import { VehicleSearchSection } from '../components/organism/vehicleSearchSection';
+import { HowItWorkSection } from '../components/organism/howItWorksSection';
+import { FaqSection } from '../components/organism/faqSection';
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -26,15 +30,12 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <input onChange={(e) => setVin(e.target.value)} value={vin} />
-      HAI INI HOMAPAGE
-      <button
-        className={styles.button}
-        aria-label="Decrement value"
-        onClick={handleClick}
-      >
-        click me
-      </button>
+      <Header />
+      <div className="container">
+        <VehicleSearchSection />
+        <HowItWorkSection />
+        <FaqSection />
+      </div>
     </div>
   );
 }
